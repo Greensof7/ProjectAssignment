@@ -1,0 +1,39 @@
+body {
+    font-family: 'Lobster', cursive;
+    background-color: #f1f1f1;
+    color: #333333;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    margin-top: 30px;
+  }
+  
+  #chart_div, #map_div {
+    height: 400px;
+    margin-bottom: 30px;
+  }
+.carousel-item active img{
+    /* height:900px;
+    width:1000px; */
+    /* margin-left:100px ;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    margin-right: 100px; */
+    /* padding: 200vh; */
+    height: 700px;
+    padding: 20px;
+}
+.carousel-item aa img{
+    height: 300px;
+    padding: 20px;
+}
+.carousel-item bb img{
+    height: 200px;
+    padding: 20px;
+}

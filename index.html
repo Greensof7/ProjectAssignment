@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+  <style>
+    /* Add custom styles here */
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Web Application</h1>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Programming Language Popularity</h2>
+            <div id="chart_div"></div>
+          </div>
+          
+          <div class="col-md-6">
+            <h2>Maps</h2>
+            <div id="map_div"></div>
+          </div>
+        </div>
+        <div class="mt-4">
+            <h2>Image Carousel</h2>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active ">
+            <img class="d-block w-100" src="learn.jpg" class="d-block w-100" alt="Image 1">
+          </div>
+          <div class="carousel-item aa">
+            <img class="d-block w-100"  src="code.jpg" class="d-block w-100" alt="Image 2">
+          </div>
+          <div class="carousel-item bb">
+            <img class="d-block w-100"  src="createcode.jpg" class="d-block w-100" alt="Image 3">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+      
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+    google.charts.load('current', { 'packages': ['corechart'] });
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Programming Language', 'Popularity'],
+    ['JavaScript', 30],
+    ['Python', 25],
+    ['Java', 20],
+    ['C#', 15],
+    ['PHP', 10]
+  ]);
+
+  var options = {
+    title: 'Popularity of Programming Languages',
+    pieHole: 0.4
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
+
+function initMap() {
+  var mapOptions = {
+    center: { lat: 37.7749, lng: -122.4194 }, 
+    zoom: 12 
+  };
+
+  var map = new google.maps.Map(document.getElementById('map_div'), mapOptions);
+  google.maps.event.addDomListener(window, 'load', initMap);
+}
+
+  </script>
+  
+</body>
+</html>
